@@ -1,6 +1,6 @@
 # Armatus-X-Maledictum.github.io
 # Just beginning step up:
-# Phase 1 — DesignFinalize rules
+# Phase 1 — DesignFinalize rule
 # Phase 2 — Prototype Prove gameplay
 # Phase 3 — Website Create player interface
 # Phase 4 — Progression Add collection systems
