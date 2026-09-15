@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Armatus X Maledictum</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main class="app-shell">
+		<section id="main-menu" class="main-menu screen" aria-labelledby="menu-title">
+			<header class="menu-header"><div class="brand-mark">AX</div><div><p class="eyebrow">Armatus X Maledictum</p><p class="menu-kicker">TACTICAL COMMAND // ONLINE</p></div><span class="status-pill"><i></i> Ready</span></header>
+			<div class="menu-intro"><p class="eyebrow">Command center</p><h1 id="menu-title">Choose your next move.</h1><p class="menu-status">Build your line, then take it into the arena.</p></div>
+			<nav class="menu-grid" aria-label="Main menu">
+				<button class="menu-button menu-button-primary" type="button" data-screen="battle"><b>01</b><span class="menu-icon">↗</span><strong>Battle</strong><small>Enter the arena</small></button>
+				<button class="menu-button" type="button" data-screen="collection"><b>02</b><span class="menu-icon">▦</span><strong>Card Collection</strong><small>Commander and gear</small></button>
+				<button class="menu-button" type="button" data-screen="story"><b>03</b><span class="menu-icon">≡</span><strong>Story</strong><small>Mission chain</small></button>
+				<button class="menu-button" type="button" data-screen="summon"><b>04</b><span class="menu-icon">✦</span><strong>Summon</strong><small>Draw your next edge</small></button>
+				<button class="menu-button" type="button" data-screen="account"><b>05</b><span class="menu-icon">◎</span><strong>Account</strong><small>Profile and identity</small></button>
+				<button class="menu-button" type="button" data-screen="settings"><b>06</b><span class="menu-icon">⚙</span><strong>Settings</strong><small>Configure the game</small></button>
+			</nav>
+			<footer class="menu-footer"><span>IRON WARDEN // LEVEL 01</span><span>LOCAL PROTOTYPE</span></footer>
+		</section>
+		<section id="collection-screen" class="collection-screen screen" hidden>
+			<div class="collection-header"><button class="back-button" type="button" data-screen="main-menu">Back to menu</button><p class="eyebrow">Deck roster</p><h1>Card Collection / Commander Collection</h1></div>
+			<div id="collection-list" class="collection-list"></div>
+		</section>
+		<section id="placeholder-screen" class="placeholder-screen screen" hidden aria-live="polite"><button class="back-button" type="button" data-screen="main-menu">Back to menu</button><p class="eyebrow" id="placeholder-eyebrow">Coming soon</p><h1 id="placeholder-title">Account</h1><p id="placeholder-copy">This part of the war room is being prepared.</p></section>
+		<section id="battle-screen" class="battle-screen screen" hidden>
+			<header class="topbar"><div class="brand-lockup"><div class="brand-mark">AX</div><div><p class="eyebrow">Card battle prototype</p><h1>Armatus X Maledictum</h1></div></div><div class="match-meta"><span class="live-dot"></span><span>LIVE MATCH</span><span class="divider"></span><span id="round-label">Round 01</span><button class="back-button" type="button" data-screen="main-menu">Menu</button></div></header>
+			<div class="battle-layout">
+				<aside class="side-panel left-panel"><div class="panel-heading"><span>Warden</span><span class="mono">YOU</span></div><div class="player-profile"><div class="avatar">AX</div><div><p class="eyebrow">Player</p><h2>Iron Warden</h2></div></div><div class="stat-block"><div class="stat-line"><span class="side-label">Health</span><strong id="health-value">2400</strong></div><div class="health-track"><span style="width: 72%"></span></div></div><div class="deck-count"><div class="deck-stack"><span></span><span></span><span></span></div><div><strong id="deck-count">18</strong><small>cards remaining</small></div></div><p class="rules-note"><span class="note-icon">i</span><span>Deploy units to the front line, then end your turn to recover energy.</span></p></aside>
+				<section class="arena"><div class="arena-header"><div><p class="eyebrow">The Hollow King</p><strong>Throne of Ash</strong></div><div class="turn-chip"><span class="turn-pip"></span>Your turn</div></div><div class="combat-zone"><div class="side-label enemy-label"><span>Enemy front line</span><small>HOLLOW KING</small></div><div class="board-row" id="enemy-board"></div><div class="midline"><div></div><span>front line</span><div></div></div><div class="board-row" id="player-board"></div><div class="side-label player-label"><span>Player front line</span><small>IRON WARDEN</small></div></div><div class="hand-section"><div class="hand-header"><div><p class="eyebrow">Opening hand</p><strong id="hand-count">4 cards</strong></div><span class="mono">Select a card</span></div><div class="hand" id="hand"></div></div></section>
+				<aside class="side-panel right-panel"><div class="panel-heading"><span>Turn control</span><span class="mono">ROUND</span></div><div class="energy-display"><div class="energy-orb">✦</div><div><p class="eyebrow">Energy</p><strong id="energy-value">06 <small>/ 10</small></strong></div></div><div class="energy-track"><span id="energy-bar" style="width: 60%"></span></div><button class="end-turn" id="end-turn" type="button"><span>End turn</span><span>↗</span></button><div class="combat-log"><div class="log-title"><span>Combat log</span><span class="live-dot"></span></div><div id="log-items"></div></div><div class="phase-list"><div class="phase current"><span>01</span><span>Deploy</span><b>●</b></div><div class="phase"><span>02</span><span>Resolve</span><b>○</b></div><div class="phase"><span>03</span><span>Recover</span><b>○</b></div></div></aside>
+			</div>
+		</section>
+	</main>
+	<noscript>This interface needs JavaScript enabled to switch between the menu, collection, and battle screens.</noscript>
+	<script src="app.js" defer></script>
+</body>
+</html>
