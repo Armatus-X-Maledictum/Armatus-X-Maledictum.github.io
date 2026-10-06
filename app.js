@@ -47,7 +47,7 @@ const placeholderContent = {
   account: ["Player profile", "Account", "Your profile and identity will live here."],
   collection: ["Collection", "Card Collection / Commander Collection", "Your roster is capped at three copies per card."],
   story: ["Narrative", "Story", "The campaign route is still being written."],
-  summon: ["Rarity pull", "Summon", "The summoning hub is not active yet."],
+  summon: ["Rarity pull", "Shop", "The summoning hub is not active yet."],
   settings: ["Configuration", "Settings", "Your game preferences will live here."]
 };
 const hand = document.querySelector("#hand");
